@@ -1,25 +1,164 @@
-<!-- DESCARGAS -->
-<section class="downloads">
-    <h2>Descargas</h2>
-    <p>Elige tu plataforma y empieza a jugar</p>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VOID STRIKE — Descargas</title>
+    <link rel="stylesheet" href="CssWeb.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
+</head>
+<body>
 
-    <div class="download-options">
-        <div class="download-card">
-            <h3>Windows</h3>
-            <p>Versión completa para PC</p>
-            <button>Descargar</button>
+    <canvas id="stars"></canvas>
+
+    <header>
+        <div class="logo">
+            <span class="logo-symbol">⚡</span>
+            <h1>VOID<span class="accent">STRIKE</span></h1>
+        </div>
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="index.html#features">Características</a>
+            <a href="Descargas.html" class="nav-active">Descargas</a>
+        </nav>
+    </header>
+
+    <section class="downloads">
+        <div class="section-header">
+            <div class="section-tag">DISPONIBLE AHORA</div>
+            <h2>Descargas</h2>
+            <p class="section-sub">Elige tu plataforma y empieza a sobrevivir</p>
         </div>
 
-        <div class="download-card">
-            <h3>Linux</h3>
-            <p>Compatible con sistemas Linux</p>
-            <button>Descargar</button>
+        <div class="download-options">
+
+            <div class="download-card featured">
+                <div class="download-badge">RECOMENDADO</div>
+                <div class="download-icon">🪟</div>
+                <h3>Windows</h3>
+                <p>Versión completa para PC. Optimizada para DirectX 12 y resoluciones 4K.</p>
+                <ul class="download-specs">
+                    <li>Mín: Windows 10 64-bit</li>
+                    <li>RAM: 8 GB</li>
+                    <li>GPU: GTX 1060 / RX 580</li>
+                </ul>
+                <button class="btn-primary" onclick="showDownload('Windows')">
+                    ↓ Descargar para Windows
+                </button>
+            </div>
+
+            <div class="download-card">
+                <div class="download-icon">🐧</div>
+                <h3>Linux</h3>
+                <p>Compatible con distribuciones Ubuntu, Debian y Arch. Build nativo optimizado.</p>
+                <ul class="download-specs">
+                    <li>Mín: Ubuntu 20.04 LTS</li>
+                    <li>RAM: 8 GB</li>
+                    <li>GPU: Mesa 21.0+</li>
+                </ul>
+                <button class="btn-primary" onclick="showDownload('Linux')">
+                    ↓ Descargar para Linux
+                </button>
+            </div>
+
+            <div class="download-card">
+                <div class="download-icon">🍎</div>
+                <h3>macOS</h3>
+                <p>Versión optimizada para Apple Silicon y Intel. Compatible con macOS 12+.</p>
+                <ul class="download-specs">
+                    <li>Mín: macOS Monterey</li>
+                    <li>RAM: 8 GB</li>
+                    <li>GPU: Apple M1 / Intel Iris</li>
+                </ul>
+                <button class="btn-primary" onclick="showDownload('macOS')">
+                    ↓ Descargar para macOS
+                </button>
+            </div>
+
         </div>
 
-        <div class="download-card">
-            <h3>Mac</h3>
-            <p>Versión optimizada para macOS</p>
-            <button>Descargar</button>
+        <div class="version-info">
+            <span class="version-badge">v0.1.0 ALPHA</span>
+            <p>Versión en desarrollo activo. Reporta bugs en el repositorio oficial.</p>
+        </div>
+    </section>
+
+    <div id="download-modal" class="modal hidden">
+        <div class="modal-box">
+            <div class="modal-icon">⚡</div>
+            <h3>VOID STRIKE</h3>
+            <p id="modal-text">Descarga próximamente disponible.</p>
+            <button class="btn-primary" onclick="closeModal()">Cerrar</button>
         </div>
     </div>
-</section>
+
+    <footer>
+        <div class="footer-logo">VOID<span class="accent">STRIKE</span></div>
+        <p>© 2026 VOID STRIKE — Todos los derechos reservados</p>
+    </footer>
+
+    <script>
+        // --- Fons d'estrelles amb canvas ---
+        const canvas = document.getElementById('stars');
+        const ctx = canvas.getContext('2d');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        const stars = Array.from({length: 160}, () => ({
+            x: Math.random() * canvas.width,
+            y: Math.random() * canvas.height,
+            r: Math.random() * 1.5 + 0.2,
+            a: Math.random(),
+            speed: Math.random() * 0.4 + 0.1
+        }));
+        function drawStars() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            stars.forEach(s => {
+                s.a += s.speed * 0.01;
+                if (s.a > 1) s.a = 0;
+                ctx.beginPath();
+                ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+                ctx.fillStyle = `rgba(100,180,255,${s.a})`;
+                ctx.fill();
+            });
+            requestAnimationFrame(drawStars);
+        }
+        drawStars();
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        });
+
+        // --- Efecte de l'header en fer scroll ---
+        window.addEventListener('scroll', () => {
+            document.querySelector('header').classList.toggle('scrolled', window.scrollY > 50);
+        });
+
+        // --- Modal de descàrrega ---
+        function showDownload(platform) {
+            document.getElementById('modal-text').textContent =
+                `La descarga para ${platform} estará disponible próximamente. ¡Mantente atento!`;
+            document.getElementById('download-modal').classList.remove('hidden');
+        }
+        function closeModal() {
+            document.getElementById('download-modal').classList.add('hidden');
+        }
+
+        // --- Aparició progressiva de les cards en fer scroll ---
+        const dlCards = document.querySelectorAll('.download-card');
+        dlCards.forEach((card, i) => {
+            card.style.opacity = 0;
+            card.style.transform = 'translateY(40px)';
+            card.style.transition = `opacity 0.6s ease ${i * 0.15}s, transform 0.6s ease ${i * 0.15}s`;
+        });
+        const obs = new IntersectionObserver((entries) => {
+            entries.forEach(e => {
+                if (e.isIntersecting) {
+                    e.target.style.opacity = 1;
+                    e.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, {threshold: 0.1});
+        dlCards.forEach(c => obs.observe(c));
+    </script>
+</body>
+</html>
