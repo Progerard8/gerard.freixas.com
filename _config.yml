@@ -10,7 +10,7 @@ lang: "es"
 
 # --- URL i rutes (GitHub Pages les detecta automàticament) ---
 baseurl: ""
-url: "https://tuusuario.github.io"
+url: "https://gerard-sintesis.vercel.app/"
 
 # --- Tema ---
 # "minima" és el tema per defecte de GitHub Pages
