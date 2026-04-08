@@ -1,0 +1,77 @@
+# ===========================
+#   VOID STRIKE — _config.yml
+# ===========================
+
+# --- Informació bàsica del lloc ---
+title: "VOID STRIKE"
+description: "Web oficial del videojoc FPS VOID STRIKE — acció, enemics i adrenalina."
+author: "G. Freixas"
+lang: "es"
+
+# --- URL i rutes (GitHub Pages les detecta automàticament) ---
+baseurl: ""
+url: "https://tuusuario.github.io"
+
+# --- Tema ---
+# "minima" és el tema per defecte de GitHub Pages
+# Si vols res (perquè fas servir el teu propi CSS), comenta aquesta línia
+theme: minima
+
+# --- Opcions de visualització ---
+show_downloads: true
+
+# --- SEO i metadades ---
+# Afegeix la teva clau de Google Analytics si en tens una
+google_analytics: ""
+
+# Open Graph (xarxes socials: previsualització de l'enllaç)
+og_image: "/assets/img/og-cover.png"
+
+# --- Xarxes socials ---
+social_links:
+  github: tuusuario
+  # twitter: tuusuario
+  # instagram: tuusuario
+
+# --- Plugins ---
+# Tots compatibles amb GitHub Pages
+plugins:
+  - jekyll-feed        # Genera feed RSS automàticament
+  - jekyll-seo-tag     # Injecta metadades SEO a cada pàgina
+  - jekyll-sitemap     # Genera sitemap.xml per a Google
+
+# --- Configuració de Markdown ---
+markdown: kramdown
+highlighter: rouge
+
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+# --- Fitxers i carpetes exclosos de la compilació ---
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - "*.sh"
+  - "*.bat"
+
+# --- Fitxers inclosos explícitament (si cal) ---
+# include:
+#   - _pages
+
+# --- Col·leccions (opcional, per si afegeixes pàgines de notícies/updates) ---
+# collections:
+#   updates:
+#     output: true
+#     permalink: /updates/:name/
+
+# --- Valors per defecte de les pàgines ---
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "default"
