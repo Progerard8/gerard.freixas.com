@@ -28,7 +28,7 @@
         <div class="hero-content">
             <div class="hero-tag">FPS · SCI-FI · ACCIÓN</div>
             <h2 id="title">Sobrevive al <span class="glitch" data-text="Chaos">Chaos</span></h2>
-            <p>Un FPS intenso con modo de niveles. Destruye enemigos. Domina el vacío.</p>
+            <p>Un FPS intenso con modo de niveles. Destruye enemigos. Domina el Reactor.</p>
             <div class="hero-buttons">
                 <a href="Descargas.html" class="btn-primary">Descargar Ahora</a>
                 <a href="#features" class="btn-secondary">Ver Características</a>
