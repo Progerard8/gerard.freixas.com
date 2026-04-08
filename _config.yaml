@@ -1,2 +1,31 @@
-title: Voidstrike
-description: Web oficial del Videojoc Void Strike GFM
+title: VOID STRIKE
+description: Web oficial del videojuego FPS VOID STRIKE - acción, enemigos y adrenalina
+author: G. Freixas
+
+# Configuración básica
+theme: minima
+lang: es
+
+# URL (opcional, GitHub lo detecta automáticamente)
+baseurl: ""
+url: "https://tuusuario.github.io"
+
+# Opciones de visualización
+show_downloads: true
+
+# Redes sociales (opcional)
+social_links:
+  github: tuusuario
+
+# Plugins básicos (GitHub Pages soporta algunos por defecto)
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# SEO básico
+google_analytics: ""
+
+# Excluir archivos innecesarios
+exclude:
+  - README.md
+  - node_modules
