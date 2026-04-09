@@ -36,11 +36,11 @@ html {
 }
 
 body {
-    background: var(--bg-deep);
+    background: radial-gradient(circle at center, #0a0202 0%, #050000 60%, #000000 100%);
     color: var(--text);
-    font-family: var(--font-body);
-    font-weight: 300;
-    overflow-x: hidden;
+    font-family: 'Exo 2', sans-serif;
+    overflow: hidden;
+    position: relative;
 }
 
 /* ── CANVAS D'ESTRELLES ── */
@@ -271,6 +271,26 @@ nav a.nav-active {
     }
     100% {
         clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
+    }
+}
+/* ANIMACIONS */
+@keyframes gridMove {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(40px);
+    }
+}
+
+@keyframes holoShift {
+    0% {
+        opacity: 0.3;
+        transform: translateX(-20px);
+    }
+    100% {
+        opacity: 0.6;
+        transform: translateX(20px);
     }
 }
 
