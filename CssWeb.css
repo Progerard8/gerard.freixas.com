@@ -220,25 +220,27 @@ nav a.nav-active {
 .glitch.active-glitch::before {
     opacity: 0.8;
     clip-path: polygon(0 0, 100% 0, 100% 35%, 0 35%);
-    transform: translate(-3px, -2px);
+    transform: translate(-4px, -3px);
     color: #ff0066;
     text-shadow: none;
-    animation: glitch-clip 0.2s steps(1) both;
+    animation: glitch-clip 0.12s steps(1) both;
 }
 
 .glitch.active-glitch::after {
     opacity: 0.8;
-    clip-path: polygon(0 65%, 100% 65%, 100% 100%, 0 100%);
-    transform: translate(3px, 2px);
+    clip-path: polygon(0 55%, 100% 55%, 100% 100%, 0 100%);
+    transform: translate(4px, 3px);
     color: #00ff88;
     text-shadow: none;
-    animation: glitch-clip 0.2s steps(1) both;
+    animation: glitch-clip 0.12s steps(2) both;
 }
 
 @keyframes glitch-clip {
-    0%   { clip-path: polygon(0 0, 100% 0, 100% 35%, 0 35%); }
-    50%  { clip-path: polygon(0 20%, 100% 20%, 100% 55%, 0 55%); }
-    100% { clip-path: polygon(0 0, 100% 0, 100% 35%, 0 35%); }
+    0%   { clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%); }
+    25%  { clip-path: polygon(0 15%, 100% 15%, 100% 60%, 0 60%); }
+    50%  { clip-path: polygon(0 35%, 100% 35%, 100% 80%, 0 80%); }
+    75%  { clip-path: polygon(0 25%, 100% 25%, 100% 70%, 0 70%); }
+    100% { clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%); }
 }
 
 /* ── BOTONS ── */
