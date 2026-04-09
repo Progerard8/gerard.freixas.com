@@ -713,3 +713,90 @@ footer p {
     .stat-divider { display: none; }
     .features, .downloads { padding: 90px 20px 60px; }
 }
+🎨 CssWeb.css (modificat)
+:root {
+    --bg-deep: #0a0202;
+    --bg-dark: #120404;
+    --bg-card: #1a0808;
+
+    --accent: #39ff14;
+    --accent2: #00cc44;
+
+    --text: #e8f4ff;
+    --border: rgba(57,255,20,0.2);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--bg-deep);
+    color: var(--text);
+    font-family: 'Exo 2', sans-serif;
+    overflow: hidden;
+}
+
+/* CANVAS */
+#stars {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+/* HEADER */
+header {
+    position: fixed;
+    width: 100%;
+    padding: 20px;
+    background: rgba(20,0,0,0.7);
+}
+
+/* HERO */
+.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* TEXT */
+h2 {
+    font-size: 60px;
+    font-family: 'Orbitron', monospace;
+}
+
+/* GLITCH RADIOACTIU */
+.glitch {
+    position: relative;
+    color: #39ff14;
+    text-shadow:
+        0 0 5px #39ff14,
+        0 0 10px #39ff14,
+        0 0 20px #39ff14;
+}
+
+.glitch::before,
+.glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+}
+
+/* EFECTE */
+.glitch.active-glitch::before {
+    opacity: 0.8;
+    transform: translate(-3px, -2px);
+    color: #00ff00;
+}
+
+.glitch.active-glitch::after {
+    opacity: 0.8;
+    transform: translate(3px, 2px);
+    color: #66ff33;
+}
