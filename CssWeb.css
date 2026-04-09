@@ -922,3 +922,169 @@ footer p {
         font-size: clamp(18px, 4vw, 32px);
     }
 }
+:root {
+    --bg-deep: #0a0202;
+    --bg-dark: #120404;
+
+    --accent: #39ff14;
+    --accent-strong: #00ff00;
+
+    --text: #e8f4ff;
+}
+
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* BODY */
+body {
+    background: radial-gradient(circle at center, #0a0202 0%, #050000 60%, #000000 100%);
+    color: var(--text);
+    font-family: 'Exo 2', sans-serif;
+    overflow: hidden;
+    position: relative;
+}
+
+/* 🌐 GRID HOLOGRÀFIC */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+
+    background-image:
+        linear-gradient(rgba(57,255,20,0.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(57,255,20,0.08) 1px, transparent 1px);
+
+    background-size: 40px 40px;
+    animation: gridMove 12s linear infinite;
+
+    z-index: 0;
+}
+
+/* ✨ EFECTE LLUM HOLOGRAMA */
+body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+
+    background: linear-gradient(
+        120deg,
+        rgba(57,255,20,0.05),
+        rgba(0,255,100,0.08),
+        rgba(57,255,20,0.05)
+    );
+
+    mix-blend-mode: screen;
+    animation: holoShift 6s ease-in-out infinite alternate;
+
+    z-index: 0;
+}
+
+/* 🎞️ ANIMACIONS */
+@keyframes gridMove {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(40px);
+    }
+}
+
+@keyframes holoShift {
+    0% {
+        opacity: 0.3;
+        transform: translateX(-20px);
+    }
+    100% {
+        opacity: 0.6;
+        transform: translateX(20px);
+    }
+}
+
+/* ⭐ CANVAS ESTRELLES */
+#stars {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+/* HEADER */
+header {
+    position: fixed;
+    width: 100%;
+    padding: 20px;
+    background: rgba(20, 0, 0, 0.7);
+    backdrop-filter: blur(6px);
+    z-index: 2;
+}
+
+/* HERO */
+.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* TEXT PRINCIPAL */
+h2 {
+    font-size: 60px;
+    font-family: 'Orbitron', monospace;
+    letter-spacing: 2px;
+    z-index: 2;
+}
+
+/* ☢️ EFECTE NEÓ RADIOACTIU */
+.glitch {
+    position: relative;
+    color: var(--accent);
+
+    text-shadow:
+        0 0 5px var(--accent),
+        0 0 10px var(--accent),
+        0 0 20px var(--accent),
+        0 0 40px var(--accent);
+}
+
+/* CAPES GLITCH */
+.glitch::before,
+.glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+}
+
+/* ⚡ GLITCH ANIMAT */
+.glitch.active-glitch::before {
+    opacity: 0.8;
+    transform: translate(-3px, -2px);
+    color: #00ff00;
+    text-shadow: 0 0 10px #00ff00;
+}
+
+.glitch.active-glitch::after {
+    opacity: 0.8;
+    transform: translate(3px, 2px);
+    color: #66ff33;
+    text-shadow: 0 0 15px #66ff33;
+}
+
+/* ✨ EFECTE EXTRA: PARPADEIG SUAU */
+@keyframes flicker {
+    0%, 18%, 22%, 25%, 53%, 57%, 100% {
+        opacity: 1;
+    }
+    20%, 24%, 55% {
+        opacity: 0.4;
+    }
+}
+
+.glitch {
+    animation: flicker 3s infinite;
+}
