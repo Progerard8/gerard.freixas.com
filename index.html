@@ -136,7 +136,7 @@
         cards.forEach((card, i) => {
             card.style.opacity = 0;
             card.style.transform = 'translateY(50px)';
-            card.style.transition = `opacity 0.6s ease ${i * 0.20}s, transform 0.2s ease ${i * 0.20}s`;
+            card.style.transition = `opacity 0.2s ease ${i * 0.10}s, transform 0.6s ease ${i * 0.10}s`;
         });
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(e => {
@@ -145,7 +145,7 @@
                     e.target.style.transform = 'translateY(0)';
                 }
             });
-        }, {threshold: 0.15});
+        }, {threshold: 0.10});
         cards.forEach(c => observer.observe(c));
 
         // --- Efecte de l'header en fer scroll ---
