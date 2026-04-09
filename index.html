@@ -128,7 +128,7 @@
         const glitch = document.querySelector('.glitch');
         setInterval(() => {
             glitch.classList.add('active-glitch');
-            setTimeout(() => neon.classList.remove('active-glitch'), 200);
+            setTimeout(() => glitch.classList.remove('active-glitch'), 200);
         }, 3000);
 
         // --- Aparició progressiva de les cards en fer scroll ---
