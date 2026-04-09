@@ -136,7 +136,7 @@
         cards.forEach((card, i) => {
             card.style.opacity = 0;
             card.style.transform = 'translateY(50px)';
-            card.style.transition = `opacity 0.6s ease ${i * 0.10}s, transform 0.6s ease ${i * 0.15}s`;
+            card.style.transition = `opacity 0.6s ease ${i * 0.1}s, transform 0.6s ease ${i * 0.15}s`;
         });
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(e => {
