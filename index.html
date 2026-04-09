@@ -129,14 +129,14 @@
         setInterval(() => {
             glitch.classList.add('active-glitch');
             setTimeout(() => glitch.classList.remove('active-glitch'), 500);
-        }, 9000);
+        }, 5000);
 
         // --- Aparició progressiva de les cards en fer scroll ---
         const cards = document.querySelectorAll('.card');
         cards.forEach((card, i) => {
             card.style.opacity = 0;
             card.style.transform = 'translateY(50px)';
-            card.style.transition = `opacity 0.2s ease ${i * 0.10}s, transform 0.6s ease ${i * 0.10}s`;
+            card.style.transition = `opacity 0.6s ease ${i * 0.10}s, transform 0.6s ease ${i * 0.10}s`;
         });
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(e => {
