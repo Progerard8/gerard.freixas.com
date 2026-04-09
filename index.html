@@ -96,7 +96,7 @@
     <script>
         // --- Fons d'estrelles amb canvas ---
         const canvas = document.getElementById('stars');
-        const ctx = canvas.getContext('3d');
+        const ctx = canvas.getContext('2d');
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
         const stars = Array.from({length: 160}, () => ({
@@ -128,7 +128,7 @@
         const glitch = document.querySelector('.glitch');
         setInterval(() => {
             glitch.classList.add('active-glitch');
-            setTimeout(() => glitch.classList.remove('active-glitch'), 200);
+            setTimeout(() => glitch.classList.remove('active-glitch'), 300);
         }, 500);
 
         // --- Aparició progressiva de les cards en fer scroll ---
@@ -136,7 +136,7 @@
         cards.forEach((card, i) => {
             card.style.opacity = 0;
             card.style.transform = 'translateY(50px)';
-            card.style.transition = `opacity 0.6s ease ${i * 0.01}s, transform 0.2s ease ${i * 0.01}s`;
+            card.style.transition = `opacity 0.6s ease ${i * 0.20}s, transform 0.2s ease ${i * 0.20}s`;
         });
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(e => {
