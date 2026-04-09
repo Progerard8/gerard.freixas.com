@@ -128,7 +128,7 @@
         const glitch = document.querySelector('.glitch');
         setInterval(() => {
             glitch.classList.add('active-glitch');
-            setTimeout(() => glitch.classList.remove('active-glitch'), 500);
+            setTimeout(() => glitch.classList.remove('active-glitch'), 1000);
         }, 4000);
 
         // --- Aparició progressiva de les cards en fer scroll ---
@@ -145,7 +145,7 @@
                     e.target.style.transform = 'translateY(0)';
                 }
             });
-        }, {threshold: 0.20});
+        }, {threshold: 0.15});
         cards.forEach(c => observer.observe(c));
 
         // --- Efecte de l'header en fer scroll ---
