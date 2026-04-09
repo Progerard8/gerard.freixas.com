@@ -129,14 +129,14 @@
         setInterval(() => {
             glitch.classList.add('active-glitch');
             setTimeout(() => glitch.classList.remove('active-glitch'), 500);
-        }, 5000);
+        }, 4000);
 
         // --- Aparició progressiva de les cards en fer scroll ---
         const cards = document.querySelectorAll('.card');
         cards.forEach((card, i) => {
             card.style.opacity = 0;
             card.style.transform = 'translateY(50px)';
-            card.style.transition = `opacity 0.6s ease ${i * 0.10}s, transform 0.6s ease ${i * 0.10}s`;
+            card.style.transition = `opacity 0.6s ease ${i * 0.15}s, transform 0.6s ease ${i * 0.15}s`;
         });
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(e => {
@@ -145,7 +145,7 @@
                     e.target.style.transform = 'translateY(0)';
                 }
             });
-        }, {threshold: 0.10});
+        }, {threshold: 0.20});
         cards.forEach(c => observer.observe(c));
 
         // --- Efecte de l'header en fer scroll ---
