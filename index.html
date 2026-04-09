@@ -125,10 +125,10 @@
         });
 
         // --- Efecte glitch al títol ---
-        const glitch = document.querySelector('.neon');
+        const glitch = document.querySelector('.glitch');
         setInterval(() => {
             glitch.classList.add('active-glitch');
-            setTimeout(() => neon.classList.remove('active-neon'), 200);
+            setTimeout(() => neon.classList.remove('active-glitch'), 200);
         }, 3000);
 
         // --- Aparició progressiva de les cards en fer scroll ---
