@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VOID STRIKE — Descargas</title>
     <link rel="stylesheet" href="CssWeb.css">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -42,9 +42,7 @@
                     <li>RAM: 8 GB</li>
                     <li>GPU: GTX 1060 / RX 580</li>
                 </ul>
-                <button class="btn-primary" onclick="showDownload('Windows')">
-                    ↓ Descargar para Windows
-                </button>
+                <button class="btn-primary" onclick="irAItch()">↓ Descargar para Windows</button>
             </div>
 
             <div class="download-card">
@@ -56,30 +54,26 @@
                     <li>RAM: 8 GB</li>
                     <li>GPU: Mesa 21.0+</li>
                 </ul>
-                <button class="btn-primary" onclick="showDownload('Linux')">
-                    ↓ Descargar para Linux
-                </button>
+                <button class="btn-primary" onclick="irAItch()">↓ Descargar para Linux</button>
             </div>
 
             <div class="download-card">
                 <div class="download-icon">🍎</div>
                 <h3>macOS</h3>
-                <p>Versión optimizada para Apple Silicon y Intel. Compatible con macOS 12+.</p>
+                <p>Versión optimizada para Apple Silicon e Intel. Compatible con macOS 12+.</p>
                 <ul class="download-specs">
                     <li>Mín: macOS Monterey</li>
                     <li>RAM: 8 GB</li>
                     <li>GPU: Apple M1 / Intel Iris</li>
                 </ul>
-                <button class="btn-primary" onclick="showDownload('macOS')">
-                    ↓ Descargar para macOS
-                </button>
+                <button class="btn-primary" onclick="irAItch()">↓ Descargar para macOS</button>
             </div>
 
         </div>
 
         <div class="version-info">
             <span class="version-badge">v0.1.0 ALPHA</span>
-            <p>Versión en desarrollo activo. Reporta bugs en el repositorio oficial.</p>
+            <p>Versión en desarrollo activo. Descarga disponible en itch.io.</p>
         </div>
     </section>
 
@@ -89,6 +83,11 @@
     </footer>
 
     <script>
+        // --- Botó de descàrrega → itch.io ---
+        function irAItch() {
+            window.open('https://progerard8.itch.io/void-strike', '_blank');
+        }
+
         // --- Fons d'estrelles amb canvas ---
         const canvas = document.getElementById('stars');
         const ctx = canvas.getContext('2d');
@@ -124,11 +123,6 @@
             document.querySelector('header').classList.toggle('scrolled', window.scrollY > 50);
         });
 
-        // --- Botó de descàrrega → itch.io ---
-        function showDownload(platform) {
-            window.open('https://progerard8.itch.io/void-strike', '_blank');
-        }
-
         // --- Aparició progressiva de les cards en fer scroll ---
         const dlCards = document.querySelectorAll('.download-card');
         dlCards.forEach((card, i) => {
@@ -146,5 +140,6 @@
         }, {threshold: 0.1});
         dlCards.forEach(c => obs.observe(c));
     </script>
+
 </body>
 </html>

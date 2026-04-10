@@ -2,71 +2,51 @@
    VOID STRIKE — CSS
    =========================== */
 
-/* ROOT VARIABLES - CYAN THEME */
 :root {
     --bg-deep:       #02040a;
-    --bg-dark:       #05080f;
     --bg-card:       #080e1c;
     --bg-card2:      #0a1220;
-    
     --accent:        #00c8ff;
     --accent2:       #0066cc;
     --accent-glow:   rgba(0, 200, 255, 0.35);
     --accent-dim:    rgba(0, 200, 255, 0.12);
-    
     --text:          #e8f4ff;
     --text-muted:    #6a8aaa;
-    
     --border:        rgba(0, 200, 255, 0.15);
     --border-bright: rgba(0, 200, 255, 0.4);
-    
     --font-display:  'Orbitron', monospace;
     --font-body:     'Exo 2', sans-serif;
 }
 
-/* GLOBAL RESETS */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-html {
-    scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; }
 
 body {
-    background: radial-gradient(circle at center, #0a0202 0%, #050000 60%, #000000 100%);
+    background: var(--bg-deep);
     color: var(--text);
-    font-family: 'Exo 2', sans-serif;
-    overflow: hidden;
-    position: relative;
+    font-family: var(--font-body);
+    font-weight: 300;
+    overflow-x: hidden;
 }
 
 /* ── CANVAS D'ESTRELLES ── */
 #stars {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
     z-index: 0;
-    pointer-events: none;  
-}
- #stars {
-    z-index: 1;
-.hero,
-header {
-    position: relative;
-    z-index: 2;
+    pointer-events: none;
 }
 
 /* ── CAPÇALERA ── */
 header {
     position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
+    top: 0; left: 0; right: 0;
     z-index: 100;
     display: flex;
     justify-content: space-between;
@@ -79,7 +59,7 @@ header {
 }
 
 header.scrolled {
-    background: rgba(2, 4, 10, 0.92);
+    background: rgba(2, 4, 10, 0.95);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
 }
 
@@ -102,9 +82,7 @@ header h1 {
     color: var(--text);
 }
 
-.accent {
-    color: var(--accent);
-}
+.accent { color: var(--accent); }
 
 nav {
     display: flex;
@@ -150,8 +128,8 @@ nav a.nav-active {
     position: absolute;
     inset: 0;
     background-image:
-        linear-gradient(rgba(0, 200, 255, 0.04) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0, 200, 255, 0.04) 1px, transparent 1px);
+        linear-gradient(rgba(0,200,255,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,200,255,0.04) 1px, transparent 1px);
     background-size: 60px 60px;
     mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
 }
@@ -164,8 +142,8 @@ nav a.nav-active {
         0deg,
         transparent,
         transparent 3px,
-        rgba(0, 0, 0, 0.06) 3px,
-        rgba(0, 0, 0, 0.06) 4px
+        rgba(0,0,0,0.06) 3px,
+        rgba(0,0,0,0.06) 4px
     );
 }
 
@@ -178,14 +156,8 @@ nav a.nav-active {
 }
 
 @keyframes fadeUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(30px); }
+    to   { opacity: 1; transform: translateY(0); }
 }
 
 .hero-tag {
@@ -238,8 +210,7 @@ nav a.nav-active {
 .glitch::after {
     content: attr(data-text);
     position: absolute;
-    left: 0;
-    top: 0;
+    left: 0; top: 0;
     width: 100%;
     overflow: hidden;
     opacity: 0;
@@ -248,86 +219,17 @@ nav a.nav-active {
 .glitch.active-glitch::before {
     opacity: 0.8;
     clip-path: polygon(0 0, 100% 0, 100% 35%, 0 35%);
-    transform: translate(-4px, -3px);
+    transform: translate(-3px, -2px);
     color: #ff0066;
     text-shadow: none;
-    animation: glitch-clip 0.12s steps(1) both;
 }
 
 .glitch.active-glitch::after {
     opacity: 0.8;
-    clip-path: polygon(0 55%, 100% 55%, 100% 100%, 0 100%);
-    transform: translate(4px, 3px);
+    clip-path: polygon(0 65%, 100% 65%, 100% 100%, 0 100%);
+    transform: translate(3px, 2px);
     color: #00ff88;
     text-shadow: none;
-    animation: glitch-clip 0.12s steps(2) both;
-}
-
-@keyframes glitch-clip {
-    0% {
-        clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
-    }
-    25% {
-        clip-path: polygon(0 15%, 100% 15%, 100% 60%, 0 60%);
-    }
-    50% {
-        clip-path: polygon(0 35%, 100% 35%, 100% 80%, 0 80%);
-    }
-    75% {
-        clip-path: polygon(0 25%, 100% 25%, 100% 70%, 0 70%);
-    }
-    100% {
-        clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
-    }
-}
-/* HOLOGRAMA GRID ESPACIAL */
-body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    background-image:
-        linear-gradient(rgba(57,255,20,0.08) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(57,255,20,0.08) 1px, transparent 1px);
-    background-size: 40px 40px;
-    z-index: 0;
-    animation: gridMove 10s linear infinite;
-}
-
-/* CAPA HOLOGRÀFICA DINÀMICA */
-body::after {
-    content: "";
-    position: fixed;
-    inset: 0;
-    background: linear-gradient(
-        120deg,
-        rgba(57,255,20,0.05),
-        rgba(0,255,100,0.08),
-        rgba(57,255,20,0.05)
-    );
-    mix-blend-mode: screen;
-    z-index: 0;
-    animation: holoShift 6s ease-in-out infinite alternate;
-}
-
-/* ANIMACIONS */
-@keyframes gridMove {
-    from {
-        transform: translateY(0);
-    }
-    to {
-        transform: translateY(40px);
-    }
-}
-
-@keyframes holoShift {
-    0% {
-        opacity: 0.3;
-        transform: translateX(-20px);
-    }
-    100% {
-        opacity: 0.6;
-        transform: translateX(20px);
-    }
 }
 
 /* ── BOTONS ── */
@@ -351,22 +253,9 @@ body::after {
     box-shadow: 0 0 20px rgba(0, 200, 255, 0.3);
 }
 
-.btn-primary::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: rgba(255, 255, 255, 0.1);
-    opacity: 0;
-    transition: opacity 0.2s;
-}
-
 .btn-primary:hover {
     transform: translateY(-2px) scale(1.03);
     box-shadow: 0 0 35px rgba(0, 200, 255, 0.55);
-}
-
-.btn-primary:hover::after {
-    opacity: 1;
 }
 
 .btn-primary.btn-large {
@@ -404,12 +293,12 @@ body::after {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 0;
     background: rgba(8, 14, 28, 0.9);
     border-top: 1px solid var(--border);
     border-bottom: 1px solid var(--border);
     padding: 28px 40px;
     flex-wrap: wrap;
+    gap: 0;
 }
 
 .stat {
@@ -501,9 +390,7 @@ body::after {
 .card::before {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
+    top: 0; left: 0; right: 0;
     height: 2px;
     background: linear-gradient(90deg, transparent, var(--accent), transparent);
     opacity: 0;
@@ -512,13 +399,11 @@ body::after {
 
 .card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4), 0 0 25px var(--accent-glow);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.4), 0 0 25px var(--accent-glow);
     border-color: var(--border-bright);
 }
 
-.card:hover::before {
-    opacity: 1;
-}
+.card:hover::before { opacity: 1; }
 
 .card-icon {
     font-size: 36px;
@@ -554,18 +439,17 @@ body::after {
     z-index: 1;
     text-align: center;
     padding: 100px 24px;
-    background: linear-gradient(180deg, transparent, rgba(0, 40, 80, 0.3), transparent);
+    background: linear-gradient(180deg, transparent, rgba(0,40,80,0.3), transparent);
     overflow: hidden;
 }
 
 .cta-glow {
     position: absolute;
-    top: 50%;
-    left: 50%;
+    top: 50%; left: 50%;
     transform: translate(-50%, -50%);
     width: 600px;
     height: 300px;
-    background: radial-gradient(ellipse, rgba(0, 200, 255, 0.1), transparent 70%);
+    background: radial-gradient(ellipse, rgba(0,200,255,0.1), transparent 70%);
     pointer-events: none;
 }
 
@@ -615,9 +499,7 @@ body::after {
 .download-card::before {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
+    top: 0; left: 0; right: 0;
     height: 2px;
     background: linear-gradient(90deg, transparent, var(--accent), transparent);
     opacity: 0;
@@ -628,17 +510,15 @@ body::after {
 .download-card:hover {
     transform: translateY(-8px);
     border-color: var(--border-bright);
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4), 0 0 25px var(--accent-glow);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.4), 0 0 25px var(--accent-glow);
 }
 
-.download-card:hover::before {
-    opacity: 1;
-}
+.download-card:hover::before { opacity: 1; }
 
 .download-card.featured {
     border-color: rgba(0, 200, 255, 0.4);
     background: var(--bg-card2);
-    box-shadow: 0 0 30px rgba(0, 200, 255, 0.12);
+    box-shadow: 0 0 30px rgba(0,200,255,0.12);
 }
 
 .download-badge {
@@ -661,7 +541,7 @@ body::after {
     font-size: 48px;
     margin-bottom: 18px;
     display: block;
-    filter: drop-shadow(0 0 10px rgba(0, 200, 255, 0.4));
+    filter: drop-shadow(0 0 10px rgba(0,200,255,0.4));
 }
 
 .download-card h3 {
@@ -684,7 +564,7 @@ body::after {
     list-style: none;
     margin-bottom: 28px;
     text-align: left;
-    background: rgba(0, 0, 0, 0.25);
+    background: rgba(0,0,0,0.25);
     border-radius: 8px;
     padding: 14px 18px;
     border: 1px solid var(--border);
@@ -732,62 +612,13 @@ body::after {
     color: var(--text-muted);
 }
 
-/* ── FINESTRA MODAL ── */
-.modal {
-    position: fixed;
-    inset: 0;
-    background: rgba(2, 4, 10, 0.85);
-    backdrop-filter: blur(8px);
-    z-index: 999;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.modal.hidden {
-    display: none;
-}
-
-.modal-box {
-    background: var(--bg-card);
-    border: 1px solid var(--border-bright);
-    border-radius: 16px;
-    padding: 50px 40px;
-    text-align: center;
-    max-width: 400px;
-    width: 90%;
-    box-shadow: 0 0 60px rgba(0, 200, 255, 0.2);
-    animation: fadeUp 0.3s ease;
-}
-
-.modal-icon {
-    font-size: 40px;
-    margin-bottom: 16px;
-    filter: drop-shadow(0 0 10px var(--accent));
-}
-
-.modal-box h3 {
-    font-family: var(--font-display);
-    font-size: 18px;
-    font-weight: 900;
-    letter-spacing: 3px;
-    color: var(--text);
-    margin-bottom: 12px;
-}
-
-.modal-box p {
-    color: var(--text-muted);
-    margin-bottom: 28px;
-    line-height: 1.6;
-}
-
 /* ── PEU DE PÀGINA ── */
 footer {
     position: relative;
     z-index: 1;
     text-align: center;
     padding: 36px 20px;
-    background: rgba(2, 4, 10, 0.9);
+    background: rgba(2,4,10,0.9);
     border-top: 1px solid var(--border);
     color: var(--text-muted);
 }
@@ -801,290 +632,13 @@ footer {
     color: var(--text);
 }
 
-footer p {
-    font-size: 13px;
-}
+footer p { font-size: 13px; }
 
-/* ── ACCESSIBILITY: REDUCED MOTION ── */
-@media (prefers-reduced-motion: reduce) {
-    *,
-    *::before,
-    *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-    }
-}
-
-/* ── RESPONSIVE TABLET (768px) ── */
-@media (max-width: 768px) {
-    header {
-        padding: 14px 24px;
-    }
-
-    nav a {
-        padding: 6px 12px;
-        font-size: 10px;
-    }
-
-    .stat {
-        padding: 0 24px;
-    }
-
-    .cards {
-        gap: 16px;
-    }
-
-    .card {
-        width: 100%;
-        max-width: 280px;
-    }
-
-    .features,
-    .downloads {
-        padding: 70px 24px 50px;
-    }
-}
-
-/* ── RESPONSIVE MOBILE (600px) ── */
+/* ── DISSENY RESPONSIU ── */
 @media (max-width: 600px) {
-    header {
-        padding: 12px 16px;
-    }
-
-    nav {
-        gap: 4px;
-    }
-
-    nav a {
-        padding: 6px 10px;
-        font-size: 9px;
-    }
-
-    .hero {
-        padding-top: 60px;
-    }
-
-    .hero-content {
-        padding: 0 16px;
-    }
-
-    .stat {
-        padding: 0 16px;
-    }
-
-    .stat-divider {
-        display: none;
-    }
-
-    .cards {
-        gap: 12px;
-    }
-
-    .card {
-        width: 100%;
-        max-width: 250px;
-        padding: 24px 20px;
-    }
-
-    .download-options {
-        gap: 16px;
-    }
-
-    .download-card {
-        width: 100%;
-        max-width: 280px;
-    }
-
-    .features,
-    .downloads {
-        padding: 60px 16px 40px;
-    }
-
-    .cta-section {
-        padding: 60px 16px;
-    }
-
-    .modal-box {
-        width: 95%;
-        padding: 36px 28px;
-    }
-
-    .section-header h2 {
-        font-size: clamp(22px, 5vw, 32px);
-    }
-
-    .hero-content h2 {
-        font-size: clamp(28px, 6vw, 60px);
-    }
-
-    .cta-section h2 {
-        font-size: clamp(18px, 4vw, 32px);
-    }
-}
-:root {
-    --bg-deep: #0a0202;
-    --bg-dark: #120404;
-
-    --accent: #39ff14;
-    --accent-strong: #00ff00;
-
-    --text: #e8f4ff;
-}
-
-/* RESET */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* BODY */
-body {
-    background: radial-gradient(circle at center, #0a0202 0%, #050000 60%, #000000 100%);
-    color: var(--text);
-    font-family: 'Exo 2', sans-serif;
-    overflow: hidden;
-    position: relative;
-}
-
-/* 🌐 GRID HOLOGRÀFIC */
-body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-
-    background-image:
-        linear-gradient(rgba(57,255,20,0.08) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(57,255,20,0.08) 1px, transparent 1px);
-
-    background-size: 40px 40px;
-    animation: gridMove 12s linear infinite;
-
-    z-index: 0;
-}
-
-/* ✨ EFECTE LLUM HOLOGRAMA */
-body::after {
-    content: "";
-    position: fixed;
-    inset: 0;
-
-    background: linear-gradient(
-        120deg,
-        rgba(57,255,20,0.05),
-        rgba(0,255,100,0.08),
-        rgba(57,255,20,0.05)
-    );
-
-    mix-blend-mode: screen;
-    animation: holoShift 6s ease-in-out infinite alternate;
-
-    z-index: 0;
-}
-
-/* 🎞️ ANIMACIONS */
-@keyframes gridMove {
-    0% {
-        transform: translateY(0);
-    }
-    100% {
-        transform: translateY(40px);
-    }
-}
-
-@keyframes holoShift {
-    0% {
-        opacity: 0.3;
-        transform: translateX(-20px);
-    }
-    100% {
-        opacity: 0.6;
-        transform: translateX(20px);
-    }
-}
-
-/* ⭐ CANVAS ESTRELLES */
-#stars {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-}
-
-/* HEADER */
-header {
-    position: fixed;
-    width: 100%;
-    padding: 20px;
-    background: rgba(20, 0, 0, 0.7);
-    backdrop-filter: blur(6px);
-    z-index: 2;
-}
-
-/* HERO */
-.hero {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
-
-/* TEXT PRINCIPAL */
-h2 {
-    font-size: 60px;
-    font-family: 'Orbitron', monospace;
-    letter-spacing: 2px;
-    z-index: 2;
-}
-
-/* ☢️ EFECTE NEÓ RADIOACTIU */
-.glitch {
-    position: relative;
-    color: var(--accent);
-
-    text-shadow:
-        0 0 5px var(--accent),
-        0 0 10px var(--accent),
-        0 0 20px var(--accent),
-        0 0 40px var(--accent);
-}
-
-/* CAPES GLITCH */
-.glitch::before,
-.glitch::after {
-    content: attr(data-text);
-    position: absolute;
-    left: 0;
-    top: 0;
-    opacity: 0;
-}
-
-/* ⚡ GLITCH ANIMAT */
-.glitch.active-glitch::before {
-    opacity: 0.8;
-    transform: translate(-3px, -2px);
-    color: #00ff00;
-    text-shadow: 0 0 10px #00ff00;
-}
-
-.glitch.active-glitch::after {
-    opacity: 0.8;
-    transform: translate(3px, 2px);
-    color: #66ff33;
-    text-shadow: 0 0 15px #66ff33;
-}
-
-/* ✨ EFECTE EXTRA: PARPADEIG SUAU */
-@keyframes flicker {
-    0%, 18%, 22%, 25%, 53%, 57%, 100% {
-        opacity: 1;
-    }
-    20%, 24%, 55% {
-        opacity: 0.4;
-    }
-}
-
-.glitch {
-    animation: flicker 3s infinite;
+    header { padding: 14px 20px; }
+    nav a { padding: 6px 10px; font-size: 10px; }
+    .stat { padding: 0 20px; }
+    .stat-divider { display: none; }
+    .features, .downloads { padding: 90px 20px 60px; }
 }
