@@ -24,7 +24,7 @@ Els colors i la tipografia són variables al principi de `assets/css/style.css` 
 
 ## Característiques
 
-- **Web estàtica**: HTML i CSS. El portfolio **no té JavaScript**; només la pàgina del joc en fa servir, per als efectes visuals. Sense frameworks, sense `npm` i sense procés de compilació.
+- **Web estàtica**: HTML i CSS. El portfolio **no té JavaScript propi**; només la pàgina del joc en fa servir, per als efectes visuals. Les dues pàgines carreguen l'script de Vercel Web Analytics (estadístiques de visites, sense cookies), servit des del mateix domini (`/_vercel/insights`). Sense frameworks, sense `npm` i sense procés de compilació.
 - **Sense serveis de tercers**: totes les tipografies estan al repositori, de manera que el navegador no fa cap petició a Google ni a cap CDN.
 - **Responsiva**: revisada des de 390 px d'amplada (mòbil) fins a escriptori.
 - **Accessible**: HTML semàntic, enllaç «Salta al contingut», navegació amb teclat, contrast WCAG AA en tot el text i respecte a la preferència «reduir moviment».
