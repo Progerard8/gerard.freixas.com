@@ -1,158 +1,135 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="ca">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VOID STRIKE</title>
-    <link rel="stylesheet" href="CssWeb.css">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>Gerard Freixas Matas · Estudiant d'Informàtica (SMX)</title>
+    <meta name="description" content="Gerard Freixas Matas, estudiant d'Informàtica (SMX) a La Salle Girona. Xarxes, ciberseguretat i desenvolupament de videojocs amb C++ i Unreal Engine 5.">
+    <meta name="author" content="Gerard Freixas Matas">
+    <meta name="theme-color" content="#E9EAEC">
+
+    <!-- Previsualització en xarxes socials i LinkedIn -->
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="ca_ES">
+    <meta property="og:title" content="Gerard Freixas Matas · Estudiant d'Informàtica (SMX)">
+    <meta property="og:description" content="Xarxes, ciberseguretat i videojocs amb C++ i Unreal Engine 5.">
+    <meta property="og:image" content="https://voidstrike-projecte.vercel.app/assets/img/og-cover.png">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+    <link rel="preload" href="assets/fonts/barlow-condensed-700.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="assets/fonts/barlow-500.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
+    <a class="skip-link" href="#contingut">Salta al contingut</a>
 
-    <canvas id="stars"></canvas>
+    <header class="hero" id="inici">
+        <div class="wrap">
+            <div class="top">
+                <a class="mark" href="#inici" aria-label="Gerard Freixas Matas, inici">GF</a>
+                <nav class="nav" aria-label="Navegació principal">
+                    <a href="#formacio">Formació</a>
+                    <a href="#eines">Eines</a>
+                    <a href="#projectes">Projectes</a>
+                    <a href="#contacte">Contacte</a>
+                </nav>
+            </div>
 
-    <header>
-        <div class="logo">
-            <span class="logo-symbol">⚡</span>
-            <h1>VOID<span class="accent">STRIKE</span></h1>
+            <h1 class="name">
+                <span><span>Gerard</span></span>
+                <span><span>Freixas Matas</span></span>
+            </h1>
+
+            <div class="hero-intro">
+                <p class="lead">Estudiant d'Informàtica (SMX) a La Salle Girona. Aprenc xarxes i ciberseguretat, i desenvolupo videojocs amb C++ i Unreal&nbsp;Engine&nbsp;5.</p>
+                <div class="actions">
+                    <a class="btn" href="#projectes">Veure projectes</a>
+                    <a class="link" href="#contacte">Contactar</a>
+                </div>
+            </div>
         </div>
-        <nav>
-            <a href="index.html" class="nav-active">Inicio</a>
-            <a href="#features">Características</a>
-            <a href="Descargas.html">Descargas</a>
-        </nav>
     </header>
 
-    <section class="hero">
-        <div class="hero-bg-grid"></div>
-        <div class="hero-content">
-            <div class="hero-tag">FPS · UNREAL ENGINE · FPS</div>
-            <h2 id="title">Domina el <span class="glitch" data-text="Reactor">Reactor</span></h2>
-            <p>Un FPS ambientado en un reactor industrial abandonado. Explora mapas de bloques, elimina oleadas de enemigos y domina 10 armas únicas.</p>
-            <div class="hero-buttons">
-                <a href="Descargas.html" class="btn-primary">Descargar en itch.io</a>
-                <a href="#features" class="btn-secondary">Ver Características</a>
+    <main id="contingut">
+
+        <section class="band" id="formacio" aria-labelledby="t-formacio">
+            <div class="wrap band-grid">
+                <h2 id="t-formacio">Formació</h2>
+                <dl class="band-body facts">
+                    <div><dt>Cicle</dt><dd>Informàtica: Sistemes Microinformàtics i Xarxes (SMX)</dd></div>
+                    <div><dt>Centre</dt><dd>La Salle Girona</dd></div>
+                    <div><dt>Estat</dt><dd>En curs</dd></div>
+                    <div><dt>Àrees</dt><dd>Xarxes, ciberseguretat i desenvolupament de videojocs</dd></div>
+                </dl>
             </div>
-        </div>
-        <div class="hero-scanline"></div>
-    </section>
+        </section>
 
-    <section class="stats-bar">
-        <div class="stat"><span class="stat-num">10</span><span class="stat-label">Armas</span></div>
-        <div class="stat-divider"></div>
-        <div class="stat"><span class="stat-num">UE5</span><span class="stat-label">Unreal Engine</span></div>
-        <div class="stat-divider"></div>
-        <div class="stat"><span class="stat-num">∞</span><span class="stat-label">Enemigos</span></div>
-        <div class="stat-divider"></div>
-        <div class="stat"><span class="stat-num">FREE</span><span class="stat-label">Para siempre</span></div>
-    </section>
-
-    <section class="features" id="features">
-        <div class="section-header">
-            <div class="section-tag">GAMEPLAY</div>
-            <h2>Características</h2>
-            <p class="section-sub">Todo lo que necesitas para entrar en combate</p>
-        </div>
-        <div class="cards">
-            <div class="card">
-                <div class="card-icon">🎯</div>
-                <h3>Combate FPS</h3>
-                <p>Acción en primera persona dentro de un reactor industrial. Reflejos, precisión y velocidad al límite absoluto.</p>
-                <div class="card-line"></div>
+        <section class="band" id="eines" aria-labelledby="t-eines">
+            <div class="wrap band-grid">
+                <h2 id="t-eines">Eines</h2>
+                <dl class="band-body facts">
+                    <div><dt>Llenguatges</dt><dd>C++, JavaScript</dd></div>
+                    <div><dt>Motor de videojocs</dt><dd>Unreal Engine 5</dd></div>
+                    <div><dt>Web</dt><dd>HTML5, CSS3</dd></div>
+                    <div><dt>Control de versions</dt><dd>Git i GitHub</dd></div>
+                </dl>
             </div>
-            <div class="card">
-                <div class="card-icon">🏭</div>
-                <h3>Reactor Industrial</h3>
-                <p>Mapas construidos con bloques dentro de un reactor abandonado. Entornos oscuros, laberínticos y llenos de peligro.</p>
-                <div class="card-line"></div>
+        </section>
+
+        <section class="band" id="projectes" aria-labelledby="t-projectes">
+            <div class="wrap band-grid">
+                <h2 id="t-projectes">Projectes</h2>
+                <div class="band-body">
+
+                    <article class="project project--featured">
+                        <h3>VOID STRIKE</h3>
+                        <p>Videojoc FPS ambientat en un reactor industrial abandonat. Fet amb Unreal Engine 5 i publicat a itch.io.</p>
+                        <p class="stack">Unreal Engine 5</p>
+                        <div class="links">
+                            <a class="link" href="void-strike/">Pàgina del projecte</a>
+                            <a class="link" href="https://progerard8.itch.io/void-strike" target="_blank" rel="noopener noreferrer">Descarregar a itch.io</a>
+                        </div>
+                    </article>
+
+                    <article class="project">
+                        <h3>c-code-project</h3>
+                        <p>Deu exercicis de C++ ordenats per dificultat, de les variables fins a l'herència i el polimorfisme. Cada fitxer acaba amb un repte.</p>
+                        <p class="stack">C++17</p>
+                        <div class="links">
+                            <a class="link" href="https://github.com/Progerard8/c-code-project" target="_blank" rel="noopener noreferrer">Veure el codi</a>
+                        </div>
+                    </article>
+
+                    <article class="project">
+                        <h3>Aquesta web</h3>
+                        <p>Portfolio escrit a mà en HTML i CSS, sense JavaScript ni serveis externs. Les tipografies són al mateix repositori.</p>
+                        <p class="stack">HTML5, CSS3</p>
+                        <div class="links">
+                            <a class="link" href="https://github.com/Progerard8/gerard.freixas.com" target="_blank" rel="noopener noreferrer">Veure el codi</a>
+                        </div>
+                    </article>
+
+                </div>
             </div>
-            <div class="card">
-                <div class="card-icon">🤖</div>
-                <h3>Enemigos Letales</h3>
-                <p>IA avanzada que reacciona a tus movimientos. Cada oleada es más difícil que la anterior.</p>
-                <div class="card-line"></div>
+        </section>
+
+        <section class="band band--dark" id="contacte" aria-labelledby="t-contacte">
+            <div class="wrap band-grid">
+                <h2 id="t-contacte">Contacte</h2>
+                <div class="band-body">
+                    <p class="contact-note">Busco pràctiques i projectes on aprendre. El codi és a GitHub i els jocs, a itch.io.</p>
+                    <ul class="contact">
+                        <li><a href="https://github.com/Progerard8" target="_blank" rel="noopener noreferrer">GitHub <span>github.com/Progerard8</span></a></li>
+                        <li><a href="https://progerard8.itch.io/" target="_blank" rel="noopener noreferrer">itch.io <span>progerard8.itch.io</span></a></li>
+                    </ul>
+                </div>
             </div>
-            <div class="card">
-                <div class="card-icon">🔫</div>
-                <h3>10 Armas Únicas</h3>
-                <p>Desde pistolas eléctricas hasta cañones de plasma. Cada arma tiene mecánicas de disparo propias.</p>
-                <div class="card-line"></div>
+            <div class="wrap foot">
+                <p>© 2026 Gerard Freixas Matas. Escrit a mà en HTML i CSS.</p>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="cta-section">
-        <div class="cta-glow"></div>
-        <h2>¿Listo para entrar al Reactor?</h2>
-        <p>Descarga gratis en itch.io y empieza a sobrevivir.</p>
-        <a href="Descargas.html" class="btn-primary btn-large">Descargar VOID STRIKE</a>
-    </section>
-
-    <footer>
-        <div class="footer-logo">VOID<span class="accent">STRIKE</span></div>
-        <p>© 2026 VOID STRIKE — Todos los derechos reservados</p>
-    </footer>
-
-    <script>
-        // --- Fons d'estrelles amb canvas ---
-        const canvas = document.getElementById('stars');
-        const ctx = canvas.getContext('2d');
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-        const stars = Array.from({length: 160}, () => ({
-            x: Math.random() * canvas.width,
-            y: Math.random() * canvas.height,
-            r: Math.random() * 1.5 + 0.2,
-            a: Math.random(),
-            speed: Math.random() * 0.4 + 0.1
-        }));
-        function drawStars() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            stars.forEach(s => {
-                s.a += s.speed * 0.01;
-                if (s.a > 1) s.a = 0;
-                ctx.beginPath();
-                ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
-                ctx.fillStyle = `rgba(100,180,255,${s.a})`;
-                ctx.fill();
-            });
-            requestAnimationFrame(drawStars);
-        }
-        drawStars();
-        window.addEventListener('resize', () => {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-        });
-
-        // --- Efecte glitch al títol ---
-        const glitch = document.querySelector('.glitch');
-        setInterval(() => {
-            glitch.classList.add('active-glitch');
-            setTimeout(() => glitch.classList.remove('active-glitch'), 200);
-        }, 3000);
-
-        // --- Aparició progressiva de les cards en fer scroll ---
-        const cards = document.querySelectorAll('.card');
-        cards.forEach((card, i) => {
-            card.style.opacity = 0;
-            card.style.transform = 'translateY(50px)';
-            card.style.transition = `opacity 0.6s ease ${i * 0.15}s, transform 0.6s ease ${i * 0.15}s`;
-        });
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(e => {
-                if (e.isIntersecting) {
-                    e.target.style.opacity = 1;
-                    e.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, {threshold: 0.15});
-        cards.forEach(c => observer.observe(c));
-
-        // --- Efecte de l'header en fer scroll ---
-        window.addEventListener('scroll', () => {
-            document.querySelector('header').classList.toggle('scrolled', window.scrollY > 50);
-        });
-    </script>
-
+    </main>
 </body>
 </html>

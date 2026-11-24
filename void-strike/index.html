@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VOID STRIKE · Videojoc FPS amb Unreal Engine 5</title>
+    <meta name="description" content="VOID STRIKE és un videojoc FPS ambientat en un reactor industrial abandonat, desenvolupat amb Unreal Engine 5 i disponible a itch.io.">
+    <meta name="author" content="Gerard Freixas Matas">
+    <meta name="theme-color" content="#02040a">
+
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="ca_ES">
+    <meta property="og:title" content="VOID STRIKE · Videojoc FPS amb Unreal Engine 5">
+    <meta property="og:description" content="Un FPS ambientat en un reactor industrial abandonat. Disponible a itch.io.">
+    <meta property="og:image" content="https://voidstrike-projecte.vercel.app/assets/img/og-cover.png">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+    <link rel="preload" href="../assets/fonts/orbitron-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="../assets/css/void-strike.css">
+    <script>document.documentElement.classList.add('js');</script>
+    <script src="../assets/js/void-strike.js" defer></script>
+</head>
+<body>
+    <a class="skip-link" href="#contingut">Salta al contingut</a>
+    <canvas id="stars" aria-hidden="true"></canvas>
+
+    <header>
+        <a class="logo" href="#inici" aria-label="VOID STRIKE, inici de la pàgina">
+            <span class="logo-symbol" aria-hidden="true">⚡</span>
+            <span class="logo-text">VOID<span class="accent">STRIKE</span></span>
+        </a>
+        <nav aria-label="Navegació principal">
+            <a href="../">← Portfolio</a>
+            <a href="#caracteristiques">Característiques</a>
+            <a href="#descarrega">Descàrrega</a>
+        </nav>
+    </header>
+
+    <main id="contingut">
+
+        <section class="hero" id="inici">
+            <div class="hero-bg-grid" aria-hidden="true"></div>
+            <div class="hero-content">
+                <div class="hero-tag">FPS · UNREAL ENGINE 5</div>
+                <h1>Domina el <span class="glitch" data-text="Reactor">Reactor</span></h1>
+                <p>Un FPS ambientat en un reactor industrial abandonat. Explora mapes de blocs, elimina onades d'enemics i domina 10 armes úniques.</p>
+                <div class="hero-buttons">
+                    <a href="#descarrega" class="btn-primary">Descarregar</a>
+                    <a href="#caracteristiques" class="btn-secondary">Veure característiques</a>
+                </div>
+            </div>
+            <div class="hero-scanline" aria-hidden="true"></div>
+        </section>
+
+        <section class="stats-bar" aria-label="Dades del joc">
+            <div class="stat"><span class="stat-num">10</span><span class="stat-label">Armes</span></div>
+            <div class="stat-divider" aria-hidden="true"></div>
+            <div class="stat"><span class="stat-num">UE5</span><span class="stat-label">Unreal Engine</span></div>
+            <div class="stat-divider" aria-hidden="true"></div>
+            <div class="stat"><span class="stat-num">FPS</span><span class="stat-label">Primera persona</span></div>
+            <div class="stat-divider" aria-hidden="true"></div>
+            <div class="stat"><span class="stat-num">PC</span><span class="stat-label">Windows</span></div>
+        </section>
+
+        <section class="features" id="caracteristiques" aria-labelledby="t-caracteristiques">
+            <div class="section-header">
+                <div class="section-tag">Gameplay</div>
+                <h2 id="t-caracteristiques">Característiques</h2>
+                <p class="section-sub">Tot el que necessites per entrar en combat</p>
+            </div>
+            <div class="cards">
+                <article class="card reveal">
+                    <span class="card-icon" aria-hidden="true">🎯</span>
+                    <h3>Combat FPS</h3>
+                    <p>Acció en primera persona dins d'un reactor industrial. Reflexos, precisió i velocitat.</p>
+                </article>
+                <article class="card reveal">
+                    <span class="card-icon" aria-hidden="true">🏭</span>
+                    <h3>Reactor industrial</h3>
+                    <p>Mapes construïts amb blocs dins d'un reactor abandonat. Entorns foscos i laberíntics.</p>
+                </article>
+                <article class="card reveal">
+                    <span class="card-icon" aria-hidden="true">🤖</span>
+                    <h3>Enemics letals</h3>
+                    <p>Enemics amb IA que reaccionen als teus moviments. Cada onada és més difícil que l'anterior.</p>
+                </article>
+                <article class="card reveal">
+                    <span class="card-icon" aria-hidden="true">🔫</span>
+                    <h3>10 armes úniques</h3>
+                    <p>Des de pistoles elèctriques fins a canons de plasma. Cada arma té una mecànica de tret pròpia.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="download" id="descarrega" aria-labelledby="t-descarrega">
+            <div class="section-header">
+                <div class="section-tag">Disponible a itch.io</div>
+                <h2 id="t-descarrega">Descàrrega</h2>
+                <p class="section-sub">Gratuït. A itch.io pots pagar el preu que vulguis.</p>
+            </div>
+
+            <div class="download-card reveal">
+                <span class="download-icon" aria-hidden="true">🪟</span>
+                <h3>Windows</h3>
+                <p>Fitxer <strong>VoidStrike.zip</strong> (947&nbsp;MB), publicat a la pàgina del joc a itch.io.</p>
+                <a class="btn-primary" href="https://progerard8.itch.io/void-strike" target="_blank" rel="noopener noreferrer">Descarregar a itch.io</a>
+            </div>
+
+            <p class="download-note">Aquest joc està marcat a itch.io com a «AI Assisted»: s'ha desenvolupat amb assistència d'intel·ligència artificial.</p>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="footer-logo">VOID<span class="accent">STRIKE</span></div>
+        <p>© 2026 Gerard Freixas Matas · <a href="../">Torna al portfolio</a></p>
+    </footer>
+</body>
+</html>
