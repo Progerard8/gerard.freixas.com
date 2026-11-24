@@ -7,7 +7,7 @@ Xarxes, ciberseguretat i desenvolupament de videojocs amb C++ i Unreal Engine 5.
 
 | Pàgina | Descripció |
 |--------|------------|
-| [`index.html`](index.html) | Portfolio: formació, eines, projectes i contacte |
+| [`index.html`](index.html) | Portfolio: sobre mi, el camí fins aquí, projectes i contacte |
 | [`void-strike/`](void-strike/index.html) | Pàgina del projecte **VOID STRIKE** (videojoc FPS amb Unreal Engine 5) |
 | [`Descargas.html`](Descargas.html) | Redirecció a la descàrrega, perquè els enllaços antics continuïn funcionant |
 
@@ -66,7 +66,8 @@ python -m http.server 8000
 
 ## Per actualitzar el contingut
 
-- **Formació, eines, projectes i contacte**: `index.html`.
+- **Sobre mi, camí, projectes i contacte**: `index.html`. Els textos són en primera persona; edita'ls directament.
+- **Foto**: copia la imatge a `assets/img/` i descomenta el bloc `<figure class="portrait">` de la secció «Sobre mi» a `index.html`.
 - **Previsualització en compartir l'enllaç** (LinkedIn, xarxes): les etiquetes `og:*` de la capçalera dels dos HTML. La imatge `og:image` fa servir l'URL absolut de la web; **si canvies de domini, actualitza'l**. La imatge és `assets/img/og-cover.png` (1200 × 630).
 
 ## Llicències
