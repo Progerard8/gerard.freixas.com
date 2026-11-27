@@ -51,15 +51,6 @@ gerard.freixas.com/
 
 Tots els enllaços són **relatius**, així que la web funciona igual penjada en una subcarpeta que en un domini propi.
 
-## Executar-la en local
-
-Només cal obrir `index.html` al navegador. Si prefereixes un servidor local:
-
-```bash
-python -m http.server 8000
-# i obre http://localhost:8000
-```
-
 ## Publicació
 
 És un lloc estàtic: es serveix tal qual, sense compilar. El repositori es desplega a **Vercel** i també a **GitHub Pages**.
